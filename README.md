@@ -10,8 +10,8 @@ configured to deploy easily to Heroku.
 To run the app locally simply run:
 
 ```
-git checkout https://...
-cd foo
+git clone git@github.com:heroku-examples/node-knockout-react-node-starter.git
+cd node-knockout-react-node-starter
 npm install
 npm start
 ```
