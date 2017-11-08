@@ -7,8 +7,7 @@ const app = express();
 
 // Initialize an express app with some security defaults
 app
-  .enable('trust proxy')
-  .use(expressEnforcesSSL)
+  .use(https)
   .use(helmet());
 
 // Application-specific routes
@@ -28,6 +27,18 @@ app.get('*', function(req, res){
 app
   .use(notfound)
   .use(errors);
+
+function https(req, res, next) {
+  if (process.env.NODE_ENV === 'production') {
+    const proto = req.headers['x-forwarded-proto'];
+    if (proto === 'https' || proto === undefined) {
+      return next();
+    }
+    return res.redirect(301, `https://${req.get('Host')}${req.originalUrl}`);
+  } else {
+    return next();
+  }
+}
 
 function notfound(req, res, next) {
   res.status(404).send('Not Found');
