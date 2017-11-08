@@ -19,10 +19,10 @@ npm start
 or if you use [`yarn`](https://yarnpkg.com):
 
 ```
-git checkout https://...
-cd foo
-npm install
-npm start
+git clone git@github.com:heroku-examples/node-knockout-react-node-starter.git
+cd node-knockout-react-node-starter
+yarn install
+yarn start
 ```
 
 Note: Be sure to update the versions of Node, Yarn / npm that you are using locally
