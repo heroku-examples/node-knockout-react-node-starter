@@ -1,7 +1,7 @@
 
 # Node Knockout React / Node starter
 
-This is a starter repo that pairs Node with a React frontend using
+This is a starter repo that pairs a Node service with a React frontend using
 [`create-react-app`](https://github.com/facebookincubator/create-react-app)
 configured to deploy easily to Heroku.
 
